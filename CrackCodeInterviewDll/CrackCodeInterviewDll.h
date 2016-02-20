@@ -14,8 +14,9 @@
 class CRACKCODEINTERVIEWDLL_API CCrackCodeInterviewDll {
 public:
 	CCrackCodeInterviewDll(void);
-	// TODO:  在此加入您的方法。
+	bool hasUniqueChar(char* str, size_t size);
 	void reverse(char* str);
+	bool isPermutated(char* str, char* permutatedStr);
 };
 
 extern CRACKCODEINTERVIEWDLL_API int nCrackCodeInterviewDll;
