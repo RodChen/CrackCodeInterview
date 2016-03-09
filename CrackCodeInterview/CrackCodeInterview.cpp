@@ -2,6 +2,10 @@
 //
 
 #include "stdafx.h"
+#include "..\CrackCodeInterviewDll\CrackCodeInterviewDll.h"
+#include "..\CrackCodeInterviewDll\LinkedList.h"
+
+CCrackCodeInterviewDll library;
 
 void reverse(char* str)
 {
@@ -25,12 +29,24 @@ void reverse(char* str)
 
 int main()
 {
-	char input1[] = { "freedom" };
-	reverse(input1);
+	LinkedList emptyList = LinkedList();
+	emptyList.traverse_and_print();
 
-	int* a = new int(1);
-	int b = 0;
-	a = &b;
+	LinkedList list1 = LinkedList();
+	list1.add_node2(10);
+	list1.add_node2(20);
+	list1.add_node2(30);
+	list1.add_node2(20);
+	list1.traverse_and_print();
+	library.removeDuplicate(list1);
+	list1.traverse_and_print();
+
+	//char input1[] = { "freedom" };
+	//reverse(input1);
+
+	//int* a = new int(1);
+	//int b = 0;
+	//a = &b;
 
     return 0;
 }

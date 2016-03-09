@@ -10,6 +10,8 @@
 #define CRACKCODEINTERVIEWDLL_API __declspec(dllimport)
 #endif
 
+#include "LinkedList.h"
+
 // 這個類別是從 CrackCodeInterviewDll.dll 匯出的
 class CRACKCODEINTERVIEWDLL_API CCrackCodeInterviewDll {
 public:
@@ -17,6 +19,9 @@ public:
 	bool hasUniqueChar(char* str, size_t size);
 	void reverse(char* str);
 	bool isPermutated(char* str, char* permutatedStr);
+
+	//Chapter 2
+	void removeDuplicate(LinkedList list);
 };
 
 extern CRACKCODEINTERVIEWDLL_API int nCrackCodeInterviewDll;

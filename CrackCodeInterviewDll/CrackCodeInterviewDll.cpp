@@ -3,7 +3,7 @@
 
 #include "stdafx.h"
 #include "CrackCodeInterviewDll.h"
-
+#include "LinkedList.h"
 
 // 這是匯出變數的範例
 CRACKCODEINTERVIEWDLL_API int nCrackCodeInterviewDll=0;
@@ -92,4 +92,30 @@ bool CCrackCodeInterviewDll::isPermutated(char * str, char * permutatedStr)
 		}
 	}
 	return true;
+}
+
+//Chap2_1
+void CCrackCodeInterviewDll::removeDuplicate(LinkedList list)
+{
+	if (list.is_empty())
+	{
+		return;
+	}
+
+	for (Node* ptr1 = list.pHead; ptr1->pNext != NULL; ptr1 = ptr1->pNext)
+	{
+		for (Node* ptr2 = ptr1; ptr2->pNext != NULL; )
+		{
+			if (ptr2->pNext->value == ptr1->value)
+			{
+				Node* temp = ptr2->pNext;
+				ptr2->pNext = temp->pNext;
+				temp->pNext = NULL;
+			}
+			else
+			{
+				ptr2 = ptr2->pNext;
+			}
+		}
+	}
 }

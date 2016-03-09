@@ -6,7 +6,7 @@ using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 namespace Chap1UnitTest
 {		
-	TEST_CLASS(UnitTest1)
+	TEST_CLASS(Chap1)
 	{
 	public:
 		CCrackCodeInterviewDll library;
