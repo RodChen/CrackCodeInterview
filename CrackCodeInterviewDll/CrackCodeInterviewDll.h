@@ -22,6 +22,7 @@ public:
 
 	//Chapter 2
 	void removeDuplicate(LinkedList list);
+	Node* getKthLast(LinkedList list, unsigned int k);
 };
 
 extern CRACKCODEINTERVIEWDLL_API int nCrackCodeInterviewDll;

@@ -130,3 +130,34 @@ void CCrackCodeInterviewDll::removeDuplicate(LinkedList list)
 		}
 	}
 }
+
+Node * CCrackCodeInterviewDll::getKthLast(LinkedList list, unsigned int k)
+{
+	if (k == 0 || list.is_empty())
+	{
+		return nullptr;
+	}
+	Node* slowPtr = list.pHead, *fastPtr = list.pHead;
+	
+	// fastPtr goes through k - 1 nodes (becomes kth node) 
+	for (size_t i = 0; i < k - 1; i++)
+	{
+		if (fastPtr->pNext == nullptr)
+		{
+			return nullptr;
+		}
+		else
+		{
+			fastPtr = fastPtr->pNext;
+		}
+	}
+
+	// go to tail
+	while (fastPtr->pNext != nullptr)
+	{
+		fastPtr = fastPtr->pNext;
+		slowPtr = slowPtr->pNext;
+	}
+
+	return slowPtr;
+}
