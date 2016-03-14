@@ -108,3 +108,29 @@ bool LinkedList::has_duplicate_element()
 	}
 	return false;
 }
+
+Node * LinkedList::get_index_at(unsigned int index)
+{
+	if (index > size())
+	{
+		return nullptr;
+	}
+
+	Node* ptr = pHead;
+	for (size_t i = 0; i < index - 1; i++)
+	{
+		ptr = ptr->pNext;
+	}
+
+	return ptr;
+}
+
+unsigned int LinkedList::size()
+{
+	unsigned int size = 0;
+	for (Node* ptr = pHead; ptr != nullptr; ptr = ptr->pNext)
+	{
+		size++;
+	}
+	return size;
+}

@@ -23,6 +23,7 @@ public:
 	//Chapter 2
 	void removeDuplicate(LinkedList list);
 	Node* getKthLast(LinkedList list, unsigned int k);
+	void deleteMiddle(LinkedList list, Node* pMid);
 };
 
 extern CRACKCODEINTERVIEWDLL_API int nCrackCodeInterviewDll;

@@ -161,3 +161,14 @@ Node * CCrackCodeInterviewDll::getKthLast(LinkedList list, unsigned int k)
 
 	return slowPtr;
 }
+
+void CCrackCodeInterviewDll::deleteMiddle(LinkedList list, Node * pMid)
+{
+	Node* ptr = pMid;
+	while (ptr->pNext != nullptr)
+	{
+		ptr->value = ptr->pNext->value;
+		ptr = ptr->pNext;
+	}
+	ptr = nullptr;
+}

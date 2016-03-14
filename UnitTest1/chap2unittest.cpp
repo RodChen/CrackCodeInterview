@@ -10,7 +10,7 @@ namespace Chap2UnitTest
 	TEST_CLASS(Chap2)
 	{
 	public:
-		LinkedList emptyList, list1, list2, list3;
+		LinkedList emptyList, list1, list2, list3, list4;
 
 		Chap2()
 		{
@@ -33,6 +33,13 @@ namespace Chap2UnitTest
 			list3.add_node(1);
 			list3.add_node(1);
 			list3.add_node(1);
+
+			list4 = LinkedList();
+			list4.add_node(1);
+			list4.add_node(5);
+			list4.add_node(3);
+			list4.add_node(2);
+			list4.add_node(4);			
 		}
 
 		CCrackCodeInterviewDll library;
@@ -81,6 +88,13 @@ namespace Chap2UnitTest
 			Assert::AreEqual(1, result4->value);
 			result4 = library.getKthLast(list3, 3);
 			Assert::AreEqual(1, result4->value);
+		}
+
+		TEST_METHOD(Chap2_3)
+		{
+			library.deleteMiddle(list4, list4.get_index_at(3));
+			Node* result = list4.get_index_at(3);
+			Assert::AreEqual(2, result->value);
 		}
 	};
 }

@@ -32,4 +32,8 @@ public:
 	bool is_empty();
 
 	bool has_duplicate_element();
+
+	Node* get_index_at(unsigned int index);
+
+	unsigned int size();
 };
