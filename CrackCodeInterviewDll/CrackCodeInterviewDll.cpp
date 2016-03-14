@@ -102,8 +102,9 @@ void CCrackCodeInterviewDll::removeDuplicate(LinkedList list)
 		return;
 	}
 
-	for (Node* ptr1 = list.pHead; ptr1->pNext != NULL; ptr1 = ptr1->pNext)
+	for (Node* ptr1 = list.pHead; ptr1->pNext != NULL; )
 	{
+		// remove every node after ptr1 having equal value as ptr1
 		for (Node* ptr2 = ptr1; ptr2->pNext != NULL; )
 		{
 			if (ptr2->pNext->value == ptr1->value)
@@ -116,6 +117,16 @@ void CCrackCodeInterviewDll::removeDuplicate(LinkedList list)
 			{
 				ptr2 = ptr2->pNext;
 			}
+		}
+
+		// if everything after ptr1 is removed, ptr1->pNext is NULL
+		if (ptr1->pNext != NULL)
+		{
+			ptr1 = ptr1->pNext;
+		}
+		else
+		{
+			break;
 		}
 	}
 }
