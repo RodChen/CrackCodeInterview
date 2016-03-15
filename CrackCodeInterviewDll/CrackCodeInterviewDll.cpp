@@ -172,3 +172,30 @@ void CCrackCodeInterviewDll::deleteMiddle(LinkedList list, Node * pMid)
 	}
 	ptr = nullptr;
 }
+
+void CCrackCodeInterviewDll::partitionValue(LinkedList& list, int x)
+{
+	LinkedList beforeList = LinkedList();
+	LinkedList afterList = LinkedList();
+
+	for (Node* ptr = list.pHead; ptr != nullptr; ptr = ptr->pNext)
+	{
+		if (ptr->value < x)
+		{
+			beforeList.add_node(ptr->value);
+		}
+		else
+		{
+			afterList.add_node(ptr->value);
+		}
+	}
+	list.delete_all();
+	for (Node* bPtr = beforeList.pHead; bPtr != nullptr; bPtr = bPtr->pNext)
+	{
+		list.add_node(bPtr->value);
+	}
+	for (Node* aPtr = afterList.pHead; aPtr != nullptr; aPtr = aPtr->pNext)
+	{
+		list.add_node(aPtr->value);
+	}
+}

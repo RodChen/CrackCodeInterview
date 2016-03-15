@@ -96,5 +96,20 @@ namespace Chap2UnitTest
 			Node* result = list4.get_index_at(3);
 			Assert::AreEqual(2, result->value);
 		}
+
+		TEST_METHOD(Chap2_4)
+		{
+			library.partitionValue(list4, 4);
+			Node* result1 = list4.get_index_at(1);
+			Assert::AreEqual(1, result1->value);
+			result1 = list4.get_index_at(2);
+			Assert::AreEqual(3, result1->value);
+			result1 = list4.get_index_at(3);
+			Assert::AreEqual(2, result1->value);
+			result1 = list4.get_index_at(4);
+			Assert::AreEqual(5, result1->value);
+			result1 = list4.get_index_at(5);
+			Assert::AreEqual(4, result1->value);
+		}
 	};
 }

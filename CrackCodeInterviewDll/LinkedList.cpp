@@ -134,3 +134,15 @@ unsigned int LinkedList::size()
 	}
 	return size;
 }
+
+void LinkedList::delete_all()
+{
+	for (Node* ptr = pHead; ptr != nullptr ; )
+	{
+		Node* temp = ptr;
+		ptr = ptr->pNext;
+		temp->pNext = nullptr;
+	}
+	pHead = nullptr;
+	pTail = nullptr;
+}

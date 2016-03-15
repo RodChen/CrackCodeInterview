@@ -36,4 +36,6 @@ public:
 	Node* get_index_at(unsigned int index);
 
 	unsigned int size();
+
+	void delete_all();
 };
