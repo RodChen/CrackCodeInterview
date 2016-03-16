@@ -26,6 +26,7 @@ public:
 	void deleteMiddle(LinkedList list, Node* pMid);
 	void partitionValue(LinkedList& list, int x);
 	LinkedList& sum(LinkedList list1, LinkedList list2);
+	bool isPalindrome(LinkedList list);
 };
 
 extern CRACKCODEINTERVIEWDLL_API int nCrackCodeInterviewDll;

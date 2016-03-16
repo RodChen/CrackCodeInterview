@@ -27,6 +27,8 @@ public:
 
 	void add_node_to_tail(int data);
 
+	void add_node_to_head(int data);
+
 	void add_node2(int data);
 
 	bool is_empty();

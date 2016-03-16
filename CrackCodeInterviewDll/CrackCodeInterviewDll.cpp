@@ -219,3 +219,22 @@ LinkedList& CCrackCodeInterviewDll::sum(LinkedList list1, LinkedList list2)
 	}
 	return resultList;
 }
+
+bool CCrackCodeInterviewDll::isPalindrome(LinkedList list)
+{
+	LinkedList reverseList = LinkedList();
+	for (Node* ptr1 = list.pHead; ptr1 != nullptr; ptr1 = ptr1->pNext)
+	{
+		reverseList.add_node_to_head(ptr1->value);
+	}
+	for (Node* origPtr = list.pHead, *revPtr = reverseList.pHead;
+		origPtr != nullptr && revPtr != nullptr;
+		origPtr = origPtr->pNext, revPtr = revPtr->pNext)
+	{
+		if (origPtr->value != revPtr->value)
+		{
+			return false;
+		}
+	}
+	return true;
+}

@@ -71,6 +71,22 @@ void LinkedList::add_node_to_tail(int data)
 	}
 }
 
+void LinkedList::add_node_to_head(int data)
+{
+	Node* pNewNode = new Node(data);
+
+	if (this->is_empty())
+	{
+		pHead = pNewNode;
+		pTail = pNewNode;
+	}
+	else
+	{
+		pNewNode->pNext = pHead;
+		pHead = pNewNode;		
+	}
+}
+
 //got some problems...
 void LinkedList::add_node2(int data)
 {

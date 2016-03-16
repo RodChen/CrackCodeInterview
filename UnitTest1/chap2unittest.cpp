@@ -10,7 +10,7 @@ namespace Chap2UnitTest
 	TEST_CLASS(Chap2)
 	{
 	public:
-		LinkedList emptyList, list1, list2, list3, list4;
+		LinkedList emptyList, list1, list2, list3, list4, list5;
 
 		Chap2()
 		{
@@ -39,7 +39,14 @@ namespace Chap2UnitTest
 			list4.add_node_to_tail(5);
 			list4.add_node_to_tail(3);
 			list4.add_node_to_tail(2);
-			list4.add_node_to_tail(4);			
+			list4.add_node_to_tail(4);		
+
+			list5 = LinkedList();
+			list5.add_node_to_tail(1);
+			list5.add_node_to_tail(5);
+			list5.add_node_to_tail(3);
+			list5.add_node_to_tail(5);
+			list5.add_node_to_tail(1);
 		}
 
 		CCrackCodeInterviewDll library;
@@ -126,6 +133,14 @@ namespace Chap2UnitTest
 			Assert::AreEqual(2, result1->value);
 			result1 = resultList1.get_index_at(5);
 			Assert::AreEqual(4, result1->value);
+		}
+
+		TEST_METHOD(Chap2_7)
+		{
+			Assert::IsTrue(library.isPalindrome(emptyList));
+			Assert::IsTrue(library.isPalindrome(list3));
+			Assert::IsTrue(library.isPalindrome(list5));
+			Assert::IsFalse(library.isPalindrome(list1));
 		}
 	};
 }
