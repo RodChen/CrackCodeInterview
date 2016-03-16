@@ -45,7 +45,7 @@ void LinkedList::traverse_and_print()
 	cout << endl;
 }
 
-void LinkedList::add_node(int data)
+void LinkedList::add_node_to_tail(int data)
 {
 	//Node newNode = Node(data);
 	Node* pNewNode = new Node(data);

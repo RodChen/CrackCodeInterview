@@ -25,6 +25,7 @@ public:
 	Node* getKthLast(LinkedList list, unsigned int k);
 	void deleteMiddle(LinkedList list, Node* pMid);
 	void partitionValue(LinkedList& list, int x);
+	LinkedList& sum(LinkedList list1, LinkedList list2);
 };
 
 extern CRACKCODEINTERVIEWDLL_API int nCrackCodeInterviewDll;

@@ -25,7 +25,7 @@ public:
 	/* Traversing the list and printing the value of each node */
 	void traverse_and_print();
 
-	void add_node(int data);
+	void add_node_to_tail(int data);
 
 	void add_node2(int data);
 

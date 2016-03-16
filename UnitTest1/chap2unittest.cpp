@@ -18,28 +18,28 @@ namespace Chap2UnitTest
 			emptyList = LinkedList();
 
 			list1 = LinkedList();
-			list1.add_node(10);
-			list1.add_node(20);
-			list1.add_node(30);
-			list1.add_node(20);
+			list1.add_node_to_tail(10);
+			list1.add_node_to_tail(20);
+			list1.add_node_to_tail(30);
+			list1.add_node_to_tail(20);
 
 			list2 = LinkedList();
-			list2.add_node(100);
-			list2.add_node(20);
-			list2.add_node(30);
-			list2.add_node(50);
+			list2.add_node_to_tail(100);
+			list2.add_node_to_tail(20);
+			list2.add_node_to_tail(30);
+			list2.add_node_to_tail(50);
 
 			list3 = LinkedList();
-			list3.add_node(1);
-			list3.add_node(1);
-			list3.add_node(1);
+			list3.add_node_to_tail(1);
+			list3.add_node_to_tail(1);
+			list3.add_node_to_tail(1);
 
 			list4 = LinkedList();
-			list4.add_node(1);
-			list4.add_node(5);
-			list4.add_node(3);
-			list4.add_node(2);
-			list4.add_node(4);			
+			list4.add_node_to_tail(1);
+			list4.add_node_to_tail(5);
+			list4.add_node_to_tail(3);
+			list4.add_node_to_tail(2);
+			list4.add_node_to_tail(4);			
 		}
 
 		CCrackCodeInterviewDll library;
@@ -109,6 +109,22 @@ namespace Chap2UnitTest
 			result1 = list4.get_index_at(4);
 			Assert::AreEqual(5, result1->value);
 			result1 = list4.get_index_at(5);
+			Assert::AreEqual(4, result1->value);
+		}
+
+		TEST_METHOD(Chap2_5)
+		{
+			//111 + 42351 = 42462 => 2->6->4->2->4
+			LinkedList resultList1 = library.sum(list4, list3);
+			Node* result1 = resultList1.get_index_at(1);
+			Assert::AreEqual(2, result1->value);
+			result1 = resultList1.get_index_at(2);
+			Assert::AreEqual(6, result1->value);
+			result1 = resultList1.get_index_at(3);
+			Assert::AreEqual(4, result1->value);
+			result1 = resultList1.get_index_at(4);
+			Assert::AreEqual(2, result1->value);
+			result1 = resultList1.get_index_at(5);
 			Assert::AreEqual(4, result1->value);
 		}
 	};

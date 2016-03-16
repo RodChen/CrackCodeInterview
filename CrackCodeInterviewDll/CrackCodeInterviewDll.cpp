@@ -182,20 +182,40 @@ void CCrackCodeInterviewDll::partitionValue(LinkedList& list, int x)
 	{
 		if (ptr->value < x)
 		{
-			beforeList.add_node(ptr->value);
+			beforeList.add_node_to_tail(ptr->value);
 		}
 		else
 		{
-			afterList.add_node(ptr->value);
+			afterList.add_node_to_tail(ptr->value);
 		}
 	}
 	list.delete_all();
 	for (Node* bPtr = beforeList.pHead; bPtr != nullptr; bPtr = bPtr->pNext)
 	{
-		list.add_node(bPtr->value);
+		list.add_node_to_tail(bPtr->value);
 	}
 	for (Node* aPtr = afterList.pHead; aPtr != nullptr; aPtr = aPtr->pNext)
 	{
-		list.add_node(aPtr->value);
+		list.add_node_to_tail(aPtr->value);
 	}
+}
+
+LinkedList& CCrackCodeInterviewDll::sum(LinkedList list1, LinkedList list2)
+{
+	int sum = 0, i = 0, j = 0;
+	
+	for (Node* ptr1 = list1.pHead; ptr1 != nullptr; i++, ptr1 = ptr1->pNext)
+	{
+		sum += ptr1->value * pow(10, i);
+	}
+	for (Node* ptr2 = list2.pHead; ptr2 != nullptr; j++, ptr2 = ptr2->pNext)
+	{
+		sum += ptr2->value * pow(10, j);
+	}
+	LinkedList resultList = LinkedList();
+	for (int remain = sum; remain > 0; remain /= 10)
+	{
+		resultList.add_node_to_tail(remain % 10);
+	}
+	return resultList;
 }
